@@ -19,8 +19,8 @@ function TableDisplay({ valuesNow }) {
           </th>
         </tr>
         <tr>
-          <th className="w-1/2 py-4">Price</th>
-          <th className="w-1/2 py-4 border-l-t">Time</th>
+          <th className="w-1/2 py-4 ">Time</th>
+          <th className="w-1/2 py-4 border-l-t">Price</th>
         </tr>
       </thead>
       <tbody>
@@ -30,19 +30,16 @@ function TableDisplay({ valuesNow }) {
           const minutes = date.getMinutes().toString().padStart(2, "0");
           return (
             <tr key={index}>
-            <th>{`${hours}:${minutes}`}</th>
+              <th>{`${hours}:${minutes}`}</th>
               <th>{item.value}€/MWh</th>
-
             </tr>
           );
         })}
         <tr>
-        <th >Media ponderada</th>
-        <th>{calculateMean(valuesNow).toFixed(2)}€/MWh</th>
-
-      </tr>
+          <th>Media ponderada</th>
+          <th>{calculateMean(valuesNow).toFixed(2)}€/MWh</th>
+        </tr>
       </tbody>
-
     </table>
   );
 }
