@@ -1,0 +1,6 @@
+.drawerCs{
+    background-color: rgba(255,255,255,0.2) !important;
+    color: var(--main-text-white) !important;
+    border-right: 0.15rem solid rgba(255,255,255,0.2) !important;
+    box-shadow: 0 0 1.2rem rgba(255,255,255,0.1) !important;
+}
