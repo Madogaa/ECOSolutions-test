@@ -1,0 +1,33 @@
+table{
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 1rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+
+}
+
+table tbody th:nth-child(even){
+    padding: 0.4rem;
+    margin:  0.4rem 0 ;;
+    border-left: 0.15rem solid rgba(255, 255, 255, 0.2);
+}
+
+table thead th{
+
+    padding: 1rem;
+}
+
+
+
+  .border-b-t{
+    border-bottom: 0.15rem solid rgba(255, 255, 255, 0.2);
+  }
+
+  .border-l-t{
+    border-left: 0.15rem solid rgba(255, 255, 255, 0.2);
+  }
+
+  .border-r-t{
+    border-right: 0.15rem solid rgba(255, 255, 255, 0.2);
+  }

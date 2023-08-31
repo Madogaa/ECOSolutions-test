@@ -74,13 +74,13 @@ function MainContent() {
   };
 
   return (
-    <div>
-      <p className="text-3xl pt-4 pb-2">
+    <div className="flex flex-col justify-center items-center">
+      <p className="text-3xl pt-4 pb-2" >
         <strong>
           {formattedDate.charAt(0).toUpperCase() + formattedDate.slice(1)}
         </strong>
       </p>
-      <div className="grid grid-cols-12">
+      <div className="grid grid-cols-12 ">
         {displayValues.map((item, index) => (
           <SimpleDisplay key={index} value={item} max={item.max} />
         ))}

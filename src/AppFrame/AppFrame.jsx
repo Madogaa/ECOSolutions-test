@@ -23,9 +23,9 @@ import { useNavigate } from "react-router-dom";
 import MainContent from "../Contents/MainContent";
 import RouterView from "../RouterView/RouterView";
 import "./AppFrame.css";
-import SecondElement from "../SecondaryRoutes/SecondElement";
-import ThirdElement from "../SecondaryRoutes/ThirdElement";
-import FourthElement from "../SecondaryRoutes/FourthElement";
+import SecondElement from "../Contents/SecondElement";
+import ThirdElement from "../Contents/ThirdElement";
+import FourthElement from "../Contents/FourthElement";
 
 const routes = [
   {
@@ -89,7 +89,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== "open",
 })(({ theme, open }) => ({
-  backgroundColor: "#778899",
+  backgroundColor: "rgba(255,255,255,0.2)",
   zIndex: theme.zIndex.drawer + 1,
   transition: theme.transitions.create(["width", "margin"], {
     easing: theme.transitions.easing.sharp,
@@ -140,6 +140,7 @@ export default function AppFrame() {
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
       <AppBar position="fixed" open={open}>
+        <div className="bg-blur" />
         <Toolbar>
           <IconButton
             color="inherit"
@@ -216,8 +217,8 @@ export default function AppFrame() {
       </Drawer>
       <Box className="text-white-t" component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
-        <div className="flex justify-center">
-          <div className="container">
+        <div className="flex justify-center items-center ">
+          <div className="container ">
             <RouterView routes={routes} />
           </div>
         </div>

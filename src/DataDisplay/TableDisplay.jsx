@@ -1,4 +1,5 @@
 import React from "react";
+import "./TableDisplay.css";
 
 function TableDisplay({ valuesNow }) {
   const calculateMean = (data) => {
@@ -9,14 +10,17 @@ function TableDisplay({ valuesNow }) {
     return sum / data.length;
   };
   return (
-    <table className="text-center">
+    <table className="self-center text-center w-1/2 mt-12">
+      <div className="bg-blur" />
       <thead>
         <tr>
-          <th colSpan="2">Price for last 24 hours</th>
+          <th className="text-xl border-b-t" colSpan="2">
+            Price for last 24 hours
+          </th>
         </tr>
         <tr>
-          <th>Price</th>
-          <th>Time</th>
+          <th className="w-1/2 py-4">Price</th>
+          <th className="w-1/2 py-4 border-l-t">Time</th>
         </tr>
       </thead>
       <tbody>
@@ -26,15 +30,19 @@ function TableDisplay({ valuesNow }) {
           const minutes = date.getMinutes().toString().padStart(2, "0");
           return (
             <tr key={index}>
-              <th >{item.value}€/MWh</th>
-              <th >{`${hours}:${minutes}`}</th>
+            <th>{`${hours}:${minutes}`}</th>
+              <th>{item.value}€/MWh</th>
+
             </tr>
           );
         })}
-      </tbody>
-      <tr>
-        <th>{calculateMean(valuesNow)}</th>
+        <tr>
+        <th >Media ponderada</th>
+        <th>{calculateMean(valuesNow).toFixed(2)}€/MWh</th>
+
       </tr>
+      </tbody>
+
     </table>
   );
 }
